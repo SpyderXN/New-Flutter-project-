@@ -1,8 +1,5 @@
 class CatalogModel {
-  static List<Item> items = [
-    Item(1, "Apple iphone 12", "Apple iphone 12th generation", 999, "#33505a",
-        "https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Elon_Musk_Colorado_2022_%28cropped2%29.jpg/800px-Elon_Musk_Colorado_2022_%28cropped2%29.jpg")
-  ];
+  static List<Item> items = [];
 }
 
 class Item {
