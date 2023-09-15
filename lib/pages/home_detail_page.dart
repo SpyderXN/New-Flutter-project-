@@ -15,9 +15,9 @@ class HomeDetailPage extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: Colors.transparent,
       ),
-      backgroundColor: MyTheme.creamColor,
+      backgroundColor: Theme.of(context).colorScheme.background,
       bottomNavigationBar: Container(
-        color: Colors.white,
+        color: Theme.of(context).colorScheme.primary,
         child: ButtonBar(
           alignment: MainAxisAlignment.spaceBetween,
           children: [
@@ -25,8 +25,8 @@ class HomeDetailPage extends StatelessWidget {
             ElevatedButton(
               onPressed: () {},
               style: ButtonStyle(
-                  backgroundColor:
-                      MaterialStateProperty.all(MyTheme.darkBluishColor),
+                  backgroundColor: MaterialStateProperty.all(
+                      Theme.of(context).colorScheme.secondary),
                   shape: MaterialStateProperty.all(const StadiumBorder())),
               child: "Add".text.xl.white.make(),
             ).wh(100, 50)
@@ -47,11 +47,11 @@ class HomeDetailPage extends StatelessWidget {
               edge: VxEdge.top,
               child: Container(
                 width: context.screenWidth,
-                color: Colors.white,
+                color: Theme.of(context).colorScheme.primary,
                 child: Column(
                   children: [
                     catalog.name.text.xl4
-                        .color(MyTheme.darkBluishColor)
+                        .color(Theme.of(context).colorScheme.secondary)
                         .bold
                         .make(),
                     catalog.desc.text.textStyle(context.captionStyle).xl.make(),

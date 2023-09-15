@@ -20,7 +20,7 @@ class _LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
     return Material(
-        color: Colors.white,
+        color: Theme.of(context).colorScheme.background,
         child: SingleChildScrollView(
           child: Form(
             key: _formKey,
@@ -72,12 +72,18 @@ class _LoginPageState extends State<LoginPage> {
                         height: 40.0,
                       ),
                       ElevatedButton(
-                          onPressed: () {
-                            moveToHome(context);
-                          },
-                          style: TextButton.styleFrom(
-                              minimumSize: const Size(150, 40)),
-                          child: const Text("Login"))
+                        onPressed: () {
+                          moveToHome(context);
+                        },
+                        style: TextButton.styleFrom(
+                            minimumSize: const Size(150, 40),
+                            backgroundColor:
+                                Theme.of(context).colorScheme.secondary),
+                        child: const Text(
+                          "Login",
+                          style: TextStyle(color: Colors.white),
+                        ),
+                      )
                     ],
                   ),
                 )
