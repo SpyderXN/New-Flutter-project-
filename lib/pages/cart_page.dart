@@ -15,7 +15,7 @@ class CartPage extends StatelessWidget {
       ),
       body: Column(
         children: [
-          const _CartList().p32().expand(),
+          _CartList().p32().expand(),
           Divider(),
           _CartTotal(),
         ],
@@ -42,7 +42,10 @@ class _CartTotal extends StatelessWidget {
             style: ButtonStyle(
                 backgroundColor: MaterialStateProperty.all(
                     Theme.of(context).colorScheme.secondary)),
-            onPressed: () {},
+            onPressed: () {
+              ScaffoldMessenger.of(context).showSnackBar(
+                  SnackBar(content: "Buying not supported yet".text.make()));
+            },
             child: "Buy".text.white.make(),
           ).w24(context)
         ],
@@ -52,8 +55,6 @@ class _CartTotal extends StatelessWidget {
 }
 
 class _CartList extends StatefulWidget {
-  const _CartList({super.key});
-
   @override
   State<_CartList> createState() => _CartListState();
 }
