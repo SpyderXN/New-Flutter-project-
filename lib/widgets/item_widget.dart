@@ -4,7 +4,7 @@ import 'package:flutter_application_1/models/catalog.dart';
 class ItemWidget extends StatelessWidget {
   final Item item;
 
-  const ItemWidget({super.key, required this.item}) : assert(item != null);
+  const ItemWidget({super.key, required this.item});
 
   @override
   Widget build(BuildContext context) {

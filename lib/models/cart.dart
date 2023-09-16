@@ -1,6 +1,12 @@
 import 'package:flutter_application_1/models/catalog.dart';
 
 class CartModel {
+  static late CartModel cartModel = CartModel._internal();
+
+  factory CartModel() {
+    return cartModel;
+  }
+  CartModel._internal();
   //catalog field
   late CatalogModel catalog;
 
@@ -8,8 +14,7 @@ class CartModel {
   final List<int> _itemIds = [];
 
   //Get items in the cart
-  Iterable<Item> get items =>
-      _itemIds.map((id) => catalog.getById(id)).toList();
+  List<Item> get items => _itemIds.map((id) => catalog.getById(id)).toList();
 
   //Get total price
   num get totalPrice =>
